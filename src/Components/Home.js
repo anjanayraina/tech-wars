@@ -27,10 +27,19 @@ function Home() {
         setdata({
           address: account,
         });
+
+        console.log(data.address);
+        // if(data.address === ""){
+
+        //     alert("Please try again !!")
+        // }
+ 
       
         
        
       };
+
+
       
   return (
     <>
@@ -39,14 +48,19 @@ function Home() {
         <h1>Welcome To Tech Wars</h1>
     </Container>
 
+ 
     <Container fluid>
 
 
 
-  <div class="btn from-top">Connect To Metamask</div>
+  <div class="btn from-top" onClick ={btnhandler}>Connect To Metamask</div>
 
 
 </Container>
+
+{
+    data.address != "" ? (<div>Metamask Connected</div>) : (<div></div>)
+}
     </>
   )
 }
