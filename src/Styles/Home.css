@@ -206,3 +206,11 @@ div:last-child {margin-bottom: 0;}
     background-color: black;
 
   } */
+
+  .Header2{
+
+    color: #FFF;
+    font-size:1rem;
+    overflow: hidden;
+    margin-left:20rem;
+  }

@@ -59,7 +59,9 @@ function Home() {
 </Container>
 
 {
-    data.address != "" ? (<div>Metamask Connected</div>) : (<div></div>)
+    data.address != "" ? (   <Container fluid className = "Header2">
+        <h1>Metamask Connected!</h1>
+    </Container>) : (<div></div>)
 }
     </>
   )
