@@ -122,3 +122,13 @@
     -webkit-transform: rotate(40deg);
             transform: rotate(40deg);
   }
+
+  .Header{
+    color: #FFF;
+    font-size:3rem;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+margin-left:32%;
+
+  }
