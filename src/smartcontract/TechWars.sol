@@ -4,9 +4,14 @@ pragma solidity ^0.8.1;
 contract TechWars{
 
 address public owner ;
+mapping (uint8 => string ) androidTechMon;
+mapping (uint8 => string) macTechMon;
+mapping (uint8 => string) windowsTechMon;
 
 constructor(){
     owner = msg.sender;
+    androidTechMon[1] = "";
+    
 }
 
 mapping (address => player) public allPlayers;
@@ -17,6 +22,10 @@ uint8 level;
 address walletAddress;
 string playerType;
 string[] techMonOwned;
+uint8 xpPoints;
+uint8 maxPoints;
+uint8 maxLevel;
+
 
 
 }
@@ -45,7 +54,10 @@ allPlayers[wallet] = player({
     level : 1 ,
     walletAddress : wallet, 
     playerType : playerType, 
-    techMonOwned : strings
+    techMonOwned : strings,
+    xpPoints : 0  ,
+    maxPoints : 5 , 
+    maxLevel : 10
 });
 
 if(isWindows(wallet)){
@@ -94,6 +106,27 @@ if(keccak256(abi.encodePacked("windows")) == keccak256(abi.encodePacked(playerTy
 return false;
 
 
+}
+
+function giveAndroidTechMon(address wallet ) public {
+
+
+
+}
+
+function giveMacTechMon(address  wallet) public {
+
+
+}
+
+function giveWindowsTechMon(address wallet) public {
+
+uint8 level = getLevel(wallet);
+if(level < 10 ){
+
+
+
+}
 
 }
 
@@ -126,6 +159,18 @@ if(allPlayers[playerName].level > 0)return true;
 
 return false;
 
+
+}
+
+function incrementXP(address wallet) public {
+   if(allPlayers[wallet].level < 10) allPlayers[wallet].xpPoints++;
+
+   if(allPlayers[wallet].level < 10 && allPlayers[wallet].xpPoints > 5){
+
+       increaseLevel(wallet);
+       allPlayers[wallet].xpPoints =0 ;
+       
+   }
 
 }
 
