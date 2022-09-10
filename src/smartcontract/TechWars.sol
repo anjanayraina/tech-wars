@@ -38,7 +38,7 @@ function getName( address playerName ) public view returns (string memory ){
 function createNewPlayer(string memory playerName , address wallet  , string memory playerType) public {
 
     require(!playerExists(wallet) , "This player already exists!!");
-     string[] memory strings;
+    string[] memory strings;
 allPlayers[wallet] = player({
 
     name : playerName , 
@@ -48,22 +48,50 @@ allPlayers[wallet] = player({
     techMonOwned : strings
 });
 
-if(keccak256(abi.encodePacked("windows")) == keccak256(abi.encodePacked(playerType))){
+if(isWindows(wallet)){
 
-allPlayers[wallet].techMonOwned.push("Windows 1");
+    allPlayers[wallet].techMonOwned.push("Windows 1");
 }
 
-else if(keccak256(abi.encodePacked("mac")) == keccak256(abi.encodePacked(playerType))){
-allPlayers[wallet].techMonOwned.push("Macintosh 128K");
+else if(isMac(wallet)){
+    allPlayers[wallet].techMonOwned.push("Macintosh 128K");
 
 }
 
 else{
 
     allPlayers[wallet].techMonOwned.push("Android 1.0");
+}
+
 
 
 }
+
+function isAndroid(address wallet)public view returns(bool){
+string memory playerType = allPlayers[wallet].playerType;
+
+if(keccak256(abi.encodePacked("android")) == keccak256(abi.encodePacked(playerType)))return true;
+return false;
+
+
+
+}
+
+function isMac(address wallet)public view returns(bool){
+string memory playerType = allPlayers[wallet].playerType;
+
+if(keccak256(abi.encodePacked("mac")) == keccak256(abi.encodePacked(playerType)))return true;
+return false;
+
+
+
+}
+
+function isWindows(address wallet)public view returns(bool){
+string memory playerType = allPlayers[wallet].playerType;
+
+if(keccak256(abi.encodePacked("windows")) == keccak256(abi.encodePacked(playerType)))return true;
+return false;
 
 
 
@@ -71,12 +99,24 @@ else{
 
 function giveMoreTechMon(address wallet)  public view  {
 
+if(isAndroid(wallet)){
+
+}
+else if(isMac(wallet)){
+
+
+}
+else{
+
+
+}
 
 }
 
 function increaseLevel( address wallet) public{
 
 allPlayers[wallet].level++;
+giveMoreTechMon(wallet);
 
 }
 
