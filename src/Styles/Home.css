@@ -214,3 +214,13 @@ div:last-child {margin-bottom: 0;}
     overflow: hidden;
     margin-left:20rem;
   }
+
+  .metamaskConnect{
+
+	margin-left: 6rem;
+    margin-top: 2rem;
+  }
+
+  .metamaskText{
+	padding-left: 2.5rem;
+  }

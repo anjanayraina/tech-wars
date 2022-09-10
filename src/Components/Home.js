@@ -53,14 +53,14 @@ function Home() {
 
 
 
-  <div class="btn from-top" onClick ={btnhandler}>Connect To Metamask</div>
+  <div class="btn from-top" onClick ={btnhandler}><h3  className = "metamaskText">Connect To Metamask</h3></div>
 
 
 </Container>
 
 {
     data.address != "" ? (   <Container fluid className = "Header2">
-        <h1>Metamask Connected!</h1>
+        <div className = "metamaskConnect">Metamask Connected!</div>
     </Container>) : (<div></div>)
 }
     </>
