@@ -15,6 +15,9 @@ struct player{
 string name;
 uint8 level;
 address walletAddress;
+string playerType;
+string[] techMonOwned;
+
 
 }
 
@@ -32,16 +35,48 @@ function getName( address playerName ) public view returns (string memory ){
 
 }
 
-function createNewPlayer(string memory playerName , address wallet) public {
+function createNewPlayer(string memory playerName , address wallet  , string memory playerType) public {
 
     require(!playerExists(wallet) , "This player already exists!!");
-
+     string[] memory strings;
 allPlayers[wallet] = player({
 
     name : playerName , 
     level : 1 ,
-    walletAddress : wallet
+    walletAddress : wallet, 
+    playerType : playerType, 
+    techMonOwned : strings
 });
+
+if(keccak256(abi.encodePacked("windows")) == keccak256(abi.encodePacked(playerType))){
+
+allPlayers[wallet].techMonOwned.push("Windows 1");
+}
+
+else if(keccak256(abi.encodePacked("mac")) == keccak256(abi.encodePacked(playerType))){
+allPlayers[wallet].techMonOwned.push("Macintosh 128K");
+
+}
+
+else{
+
+    allPlayers[wallet].techMonOwned.push("Android 1.0");
+
+
+}
+
+
+
+}
+
+function giveMoreTechMon(address wallet)  public view  {
+
+
+}
+
+function increaseLevel( address wallet) public{
+
+allPlayers[wallet].level++;
 
 }
 
