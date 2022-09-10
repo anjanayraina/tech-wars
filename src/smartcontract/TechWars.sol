@@ -26,7 +26,7 @@ function getLevel( address playerName ) public view returns (uint8){
 
 
 
-function getAddress( address playerName ) public view returns (string memory ){
+function getName( address playerName ) public view returns (string memory ){
 
     return allPlayers[playerName].name;
 
@@ -34,7 +34,7 @@ function getAddress( address playerName ) public view returns (string memory ){
 
 function createNewPlayer(string memory playerName , address wallet) public {
 
-    // require(playerExists(wallet) , "This player already exists!!");
+    require(!playerExists(wallet) , "This player already exists!!");
 
 allPlayers[wallet] = player({
 
@@ -47,12 +47,14 @@ allPlayers[wallet] = player({
 
 function playerExists(address playerName) public view returns (bool) {
 
-if(allPlayers[playerName].level == 0)return true;
+if(allPlayers[playerName].level > 0)return true;
 
 return false;
 
 
 }
+
+
 
 
 
