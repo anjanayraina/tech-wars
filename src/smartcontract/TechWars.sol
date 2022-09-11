@@ -10,8 +10,29 @@ mapping (uint8 => string) windowsTechMon;
 
 constructor(){
     owner = msg.sender;
-    androidTechMon[1] = "";
-    
+    androidTechMon[1] = "Android 1.0";
+    androidTechMon[2] = "Cupcake";
+    androidTechMon[3] = "Donut";
+    androidTechMon[4] = "Ice Cream Sandwich";
+    androidTechMon[5] = "Jelly Bean";
+    androidTechMon[6] = "KitKat";
+    androidTechMon[7] = "Lollipop";
+    androidTechMon[8] = "Marshmallow ";
+    androidTechMon[9] = "Oreo";
+    androidTechMon[10] = "Q";
+
+
+    macTechMon[1] = "Mac OS X10.0";
+    macTechMon[2] = "MacOS X10.6";
+    macTechMon[3] = "Yosemite";
+    macTechMon[4] = "Mavericks";
+    macTechMon[5] = "Sierra";
+    macTechMon[6] = "High Sierra";
+    macTechMon[7] = "Mojave";
+    macTechMon[8] = "Catalina ";
+    macTechMon[9] = "Big Sur";
+    macTechMon[10] = "Monterey";
+
 }
 
 mapping (address => player) public allPlayers;
@@ -111,11 +132,22 @@ return false;
 function giveAndroidTechMon(address wallet ) public {
 
 
+uint8 level = getLevel(wallet);
+if(level < 10 ){
+
+allPlayers[wallet].techMonOwned.push(androidTechMon[level]);
+
+}
 
 }
 
 function giveMacTechMon(address  wallet) public {
+uint8 level = getLevel(wallet);
+if(level < 10 ){
 
+allPlayers[wallet].techMonOwned.push(macTechMon[level]);
+
+}
 
 }
 
@@ -124,23 +156,25 @@ function giveWindowsTechMon(address wallet) public {
 uint8 level = getLevel(wallet);
 if(level < 10 ){
 
-
-
-}
+allPlayers[wallet].techMonOwned.push(windowsTechMon[level]);
 
 }
 
-function giveMoreTechMon(address wallet)  public view  {
+}
+
+function giveMoreTechMon(address wallet)  public   {
 
 if(isAndroid(wallet)){
 
+giveAndroidTechMon(wallet);
 }
 else if(isMac(wallet)){
+giveMacTechMon(wallet);
 
 
 }
 else{
-
+giveWindowsTechMon(wallet);
 
 }
 
