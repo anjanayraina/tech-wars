@@ -63,6 +63,27 @@ uint8 maxLevel;
 
 }
 
+struct techMon{
+
+string name;
+uint16 health;
+string techMonType;
+uint16 maxHealth;
+uint8 speed;
+move[] allMoves;
+
+
+
+}
+
+struct move{
+
+string moveType;
+uint16 attack;
+
+    
+}
+
 function getLevel( address playerName ) public view returns (uint8){
 
     return allPlayers[playerName].level;
