@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
 import { Container, Row, Col } from "react-bootstrap";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link , useNavigate } from "react-router-dom";
 import '../Styles/Home.css'
 function Home() {
     const [data, setdata] = useState({
@@ -39,6 +39,10 @@ function Home() {
         
        
       };
+      const navigate = useNavigate();
+      const toComponentB=()=>{
+        navigate('/play',{state:{walletAddress : data.address}});
+          }
 
 
       
@@ -61,7 +65,7 @@ function Home() {
 
 {
     data.address != "" ? (   <Container fluid className = "Header2">
-    <Link to="/play">Playing Screen</Link>
+    <div ><button onClick ={toComponentB}>Playing Screen</button></div>
     </Container>) : (<div></div>)
 }
 <Outlet />

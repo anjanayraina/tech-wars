@@ -33,6 +33,18 @@ constructor(){
     macTechMon[9] = "Big Sur";
     macTechMon[10] = "Monterey";
 
+    
+    windowsTechMon[1] = "Windows 1.0";
+    windowsTechMon[2] = "Windows 2.0";
+    windowsTechMon[3] = "Windows 3.0";
+    windowsTechMon[4] = "Windows 95";
+    windowsTechMon[5] = "Windows 2000";
+    windowsTechMon[6] = "Windows XP";
+    windowsTechMon[7] = "Windows 7";
+    windowsTechMon[8] = "Windows 8";
+    windowsTechMon[9] = "Windows 10";
+    windowsTechMon[10] = "Windows 11";
+
 }
 
 mapping (address => player) public allPlayers;
@@ -133,7 +145,7 @@ function giveAndroidTechMon(address wallet ) public {
 
 
 uint8 level = getLevel(wallet);
-if(level < 10 ){
+if(level <= 10 ){
 
 allPlayers[wallet].techMonOwned.push(androidTechMon[level]);
 
@@ -143,7 +155,7 @@ allPlayers[wallet].techMonOwned.push(androidTechMon[level]);
 
 function giveMacTechMon(address  wallet) public {
 uint8 level = getLevel(wallet);
-if(level < 10 ){
+if(level <= 10 ){
 
 allPlayers[wallet].techMonOwned.push(macTechMon[level]);
 
@@ -154,7 +166,7 @@ allPlayers[wallet].techMonOwned.push(macTechMon[level]);
 function giveWindowsTechMon(address wallet) public {
 
 uint8 level = getLevel(wallet);
-if(level < 10 ){
+if(level <= 10 ){
 
 allPlayers[wallet].techMonOwned.push(windowsTechMon[level]);
 
