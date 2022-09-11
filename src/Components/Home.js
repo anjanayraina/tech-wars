@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
 import { Container, Row, Col } from "react-bootstrap";
+import { Outlet, Link } from "react-router-dom";
 import '../Styles/Home.css'
 function Home() {
     const [data, setdata] = useState({
@@ -60,9 +61,10 @@ function Home() {
 
 {
     data.address != "" ? (   <Container fluid className = "Header2">
-        <div className = "metamaskConnect">Metamask Connected!</div>
+    <Link to="/play">Playing Screen</Link>
     </Container>) : (<div></div>)
 }
+<Outlet />
     </>
   )
 }
