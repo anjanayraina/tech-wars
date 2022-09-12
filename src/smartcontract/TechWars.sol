@@ -101,7 +101,7 @@ string name;
 uint8 level;
 address walletAddress;
 string playerType;
-techMon[] techMonOwned;
+uint8 [] techMonOwned;
 uint8 xpPoints;
 uint8 maxPoints;
 uint8 maxLevel;
@@ -151,17 +151,24 @@ function getName( address playerName ) public view returns (string memory ){
 
 }
 
-function createNewPlayer(string memory playerName , address wallet  , string memory playerType) public {
+// techMon[] strings;
+
+function createNewPlayer(string memory playerName , address wallet  , string memory playerType ) public {
 
     require(!playerExists(wallet) , "This player already exists!!");
-    techMon[] memory strings;
+    // techMon[] memory strings;
+    // player storage currentPlayer  = allPlayers[wallet];
+    // currentPlayer.name = playerName;
+
+uint8 [] memory temp;
+
 allPlayers[wallet] = player({
 
     name : playerName , 
     level : 1 ,
     walletAddress : wallet, 
     playerType : playerType, 
-    techMonOwned : strings,
+    techMonOwned : temp ,
     xpPoints : 0  ,
     maxPoints : 5 , 
     maxLevel : 10
@@ -169,17 +176,17 @@ allPlayers[wallet] = player({
 
 if(isWindows(wallet)){
 
-    allPlayers[wallet].techMonOwned.push(windowsTechMon[1]);
+    allPlayers[wallet].techMonOwned.push(1);
 }
 
 else if(isMac(wallet)){
-    allPlayers[wallet].techMonOwned.push(macTechMon[1]);
+    allPlayers[wallet].techMonOwned.push(1);
 
 }
 
 else{
 
-    allPlayers[wallet].techMonOwned.push(androidTechMon[1]);
+    allPlayers[wallet].techMonOwned.push(1);
 }
 
 
@@ -221,7 +228,7 @@ function giveAndroidTechMon(address wallet ) public {
 uint8 level = getLevel(wallet);
 if(level <= 10 ){
 
-allPlayers[wallet].techMonOwned.push(androidTechMon[level]);
+allPlayers[wallet].techMonOwned.push(level);
 
 }
 
@@ -231,7 +238,7 @@ function giveMacTechMon(address  wallet) public {
 uint8 level = getLevel(wallet);
 if(level <= 10 ){
 
-allPlayers[wallet].techMonOwned.push(macTechMon[level]);
+allPlayers[wallet].techMonOwned.push(level);
 
 }
 
@@ -242,7 +249,7 @@ function giveWindowsTechMon(address wallet) public {
 uint8 level = getLevel(wallet);
 if(level <= 10 ){
 
-allPlayers[wallet].techMonOwned.push(windowsTechMon[level]);
+allPlayers[wallet].techMonOwned.push(level);
 
 }
 
