@@ -12,21 +12,48 @@ constructor(){
     owner = msg.sender;
     move memory attack = move({ attack : 10,
  speed : 10, 
+accuracy : 90
+});
+
+move memory speed = move({ attack : 5,
+ speed : 100, 
 accuracy : 100
 });
 
-    androidTechMon[1] = techMon({name : "Android 1.0" , health : 90 , techMonType : "android"  , attackMove : attack , });
-    androidTechMon[2] = techMon({name : "Cupcake" , health : 100 , techMonType : "android"  , allMoves : tempMove});
-    androidTechMon[3] = techMon({name : "Donut" , health : 110 , techMonType : "android"  , allMoves : tempMove});
-    androidTechMon[4] =techMon({name : "Ice Cream Sandwich" , health : 120 , techMonType : "android"  , allMoves : tempMove}); 
-    androidTechMon[5] = techMon({name : "Jelly Bean" , health : 130 , techMonType : "android"  , allMoves : tempMove});
-    androidTechMon[6] =techMon({name : "KitKat" , health : 140 , techMonType : "android"  , allMoves : tempMove}); 
-    androidTechMon[7] = techMon({name : "Lollipop" , health : 150 , techMonType : "android"  , allMoves : tempMove});
-    androidTechMon[8] = techMon({name : "Marshmallow" , health : 160 , techMonType : "android"  , allMoves : tempMove});
-    androidTechMon[9] = techMon({name : "Oreo" , health : 170 , techMonType : "android"  , allMoves : tempMove});
-    androidTechMon[10] =techMon({name : "Q" , health : 180 , techMonType : "android"  , allMoves : tempMove}); 
+move memory health = move({
 
-    move[] memory tempMove2;
+    attack : 20 , 
+    accuracy : 100 , 
+    speed : 20
+});
+
+    androidTechMon[1] = techMon({name : "Android 1.0" , health : 90 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health });
+    androidTechMon[2] = techMon({name : "Cupcake" , health : 100 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health});
+    androidTechMon[3] = techMon({name : "Donut" , health : 110 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health});
+    androidTechMon[4] =techMon({name : "Ice Cream Sandwich" , health : 120 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health}); 
+    androidTechMon[5] = techMon({name : "Jelly Bean" , health : 130 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health});
+    androidTechMon[6] =techMon({name : "KitKat" , health : 140 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health}); 
+    androidTechMon[7] = techMon({name : "Lollipop" , health : 150 , techMonType : "android"  ,attackMove : attack , speedMove:speed , healthMove :health});
+    androidTechMon[8] = techMon({name : "Marshmallow" , health : 160 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health});
+    androidTechMon[9] = techMon({name : "Oreo" , health : 170 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health});
+    androidTechMon[10] =techMon({name : "Q" , health : 180 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health}); 
+
+      move memory attackMac = move({ attack : 10,
+ speed : 10, 
+accuracy : 90
+});
+
+move memory speedMac = move({ attack : 5,
+ speed : 100, 
+accuracy : 100
+});
+
+move memory healthMac = move({
+
+    attack : 20 , 
+    accuracy : 100 , 
+    speed : 20
+});
     macTechMon[1] = techMon({name : "Mac OS X10.0" , health : 30 , techMonType : "mac"  , allMoves : tempMove2});
     macTechMon[2] = techMon({name : "Mac OS X10.6" , health : 40 , techMonType : "mac"  , allMoves : tempMove2});
     macTechMon[3] = techMon({name : "Yosemite" , health : 50 , techMonType : "mac"  , allMoves : tempMove2});
