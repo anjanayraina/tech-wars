@@ -38,44 +38,59 @@ move memory health = move({
     androidTechMon[9] = techMon({name : "Oreo" , health : 170 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health});
     androidTechMon[10] =techMon({name : "Q" , health : 180 , techMonType : "android"  , attackMove : attack , speedMove:speed , healthMove :health}); 
 
-      move memory attackMac = move({ attack : 10,
- speed : 10, 
-accuracy : 90
+      move memory attackMac = move({ attack : 30,
+ speed : 30, 
+accuracy : 85
 });
 
-move memory speedMac = move({ attack : 5,
+move memory speedMac = move({ attack : 20,
  speed : 100, 
 accuracy : 100
 });
 
 move memory healthMac = move({
 
-    attack : 20 , 
+    attack : 10 , 
     accuracy : 100 , 
     speed : 20
 });
-    macTechMon[1] = techMon({name : "Mac OS X10.0" , health : 30 , techMonType : "mac"  , allMoves : tempMove2});
-    macTechMon[2] = techMon({name : "Mac OS X10.6" , health : 40 , techMonType : "mac"  , allMoves : tempMove2});
-    macTechMon[3] = techMon({name : "Yosemite" , health : 50 , techMonType : "mac"  , allMoves : tempMove2});
-    macTechMon[4] = techMon({name : "Mavericks" , health : 60 , techMonType : "mac"  , allMoves : tempMove2});
-    macTechMon[5] = techMon({name : "Sierra" , health : 70 , techMonType : "mac"  , allMoves : tempMove2});
-    macTechMon[6] = techMon({name : "High Sierra" , health : 80 , techMonType : "mac"  , allMoves : tempMove2});
-    macTechMon[7] = techMon({name : "Mojave", health : 90 , techMonType : "mac"  , allMoves : tempMove2});
-    macTechMon[8] = techMon({name : "Catalina " , health : 100 , techMonType : "mac"  , allMoves : tempMove2});
-    macTechMon[9] = techMon({name : "Big Sur", health : 110 , techMonType : "mac"  , allMoves : tempMove2});
-    macTechMon[10] = techMon({name : "Monterey" , health : 120 , techMonType : "mac"  , allMoves : tempMove2});
+    macTechMon[1] = techMon({name : "Mac OS X10.0" , health : 30 , techMonType : "mac"  , attackMove : attackMac , speedMove:speedMac , healthMove :healthMac });
+    macTechMon[2] = techMon({name : "Mac OS X10.6" , health : 40 , techMonType : "mac"  , attackMove : attackMac , speedMove:speedMac , healthMove :healthMac });
+    macTechMon[3] = techMon({name : "Yosemite" , health : 50 , techMonType : "mac"  , attackMove : attackMac , speedMove:speedMac , healthMove :healthMac });
+    macTechMon[4] = techMon({name : "Mavericks" , health : 60 , techMonType : "mac"  ,attackMove : attackMac , speedMove:speedMac , healthMove :healthMac });
+    macTechMon[5] = techMon({name : "Sierra" , health : 70 , techMonType : "mac"  , attackMove : attackMac , speedMove:speedMac , healthMove :healthMac });
+    macTechMon[6] = techMon({name : "High Sierra" , health : 80 , techMonType : "mac"  , attackMove : attackMac , speedMove:speedMac , healthMove :healthMac });
+    macTechMon[7] = techMon({name : "Mojave", health : 90 , techMonType : "mac"  , attackMove : attackMac , speedMove:speedMac , healthMove :healthMac });
+    macTechMon[8] = techMon({name : "Catalina " , health : 100 , techMonType : "mac"  , attackMove : attackMac , speedMove:speedMac , healthMove :healthMac });
+    macTechMon[9] = techMon({name : "Big Sur", health : 110 , techMonType : "mac"  , attackMove : attackMac , speedMove:speedMac , healthMove :healthMac });
+    macTechMon[10] = techMon({name : "Monterey" , health : 120 , techMonType : "mac"  ,attackMove : attackMac , speedMove:speedMac , healthMove :healthMac });
 
-    move[] memory tempMove3;
-    windowsTechMon[1] =  techMon({name : "Windows 1.0" , health : 60 , techMonType : "windows"  , allMoves : tempMove3});
-    windowsTechMon[2] =  techMon({name : "Windows 2.0" , health : 70 , techMonType : "windows"  , allMoves : tempMove3});
-    windowsTechMon[3] =  techMon({name : "Windows 3.0" , health : 80 , techMonType : "windows"  , allMoves : tempMove3});
-    windowsTechMon[4] =  techMon({name : "Windows 95", health : 90 , techMonType : "windows"  , allMoves : tempMove3});
-    windowsTechMon[5] =  techMon({name : "Windows 2000" , health : 100 , techMonType : "windows"  , allMoves : tempMove3});
-    windowsTechMon[6] =  techMon({name : "Windows XP" , health : 110 , techMonType : "windows"  , allMoves : tempMove3});
-    windowsTechMon[7] =  techMon({name : "Windows 7" , health : 120 , techMonType : "windows"  , allMoves : tempMove3});
-    windowsTechMon[8] =  techMon({name : "Windows 8", health : 130 , techMonType : "windows"  , allMoves : tempMove3});
-    windowsTechMon[9] =  techMon({name : "Windows 10", health : 140 , techMonType : "windows"  , allMoves : tempMove3});
-    windowsTechMon[10] =  techMon({name : "Windows 11" , health : 150 , techMonType : "windows"  , allMoves : tempMove3});
+          move memory attackWindows = move({ attack : 20,
+ speed : 15, 
+accuracy : 80
+});
+
+move memory speedWindows = move({ attack : 15,
+ speed : 100, 
+accuracy : 100
+});
+
+move memory healthWindows = move({
+
+    attack : 15 , 
+    accuracy : 100 , 
+    speed : 20
+});
+    windowsTechMon[1] =  techMon({name : "Windows 1.0" , health : 60 , techMonType : "windows"  , attackMove : attackWindows , speedMove:speedWindows , healthMove :healthWindows});
+    windowsTechMon[2] =  techMon({name : "Windows 2.0" , health : 70 , techMonType : "windows"  , attackMove : attackWindows , speedMove:speedWindows , healthMove :healthWindows});
+    windowsTechMon[3] =  techMon({name : "Windows 3.0" , health : 80 , techMonType : "windows"  , attackMove : attackWindows , speedMove:speedWindows , healthMove :healthWindows});
+    windowsTechMon[4] =  techMon({name : "Windows 95", health : 90 , techMonType : "windows"  , attackMove : attackWindows , speedMove:speedWindows , healthMove :healthWindows});
+    windowsTechMon[5] =  techMon({name : "Windows 2000" , health : 100 , techMonType : "windows"  , attackMove : attackWindows , speedMove:speedWindows , healthMove :healthWindows});
+    windowsTechMon[6] =  techMon({name : "Windows XP" , health : 110 , techMonType : "windows"  ,attackMove : attackWindows , speedMove:speedWindows , healthMove :healthWindows});
+    windowsTechMon[7] =  techMon({name : "Windows 7" , health : 120 , techMonType : "windows"  , attackMove : attackWindows , speedMove:speedWindows , healthMove :healthWindows});
+    windowsTechMon[8] =  techMon({name : "Windows 8", health : 130 , techMonType : "windows"  , attackMove : attackWindows , speedMove:speedWindows , healthMove :healthWindows});
+    windowsTechMon[9] =  techMon({name : "Windows 10", health : 140 , techMonType : "windows"  , attackMove : attackWindows , speedMove:speedWindows , healthMove :healthWindows});
+    windowsTechMon[10] =  techMon({name : "Windows 11" , health : 150 , techMonType : "windows"  ,attackMove : attackWindows , speedMove:speedWindows , healthMove :healthWindows});
 
 }
 
