@@ -4,46 +4,51 @@ pragma solidity ^0.8.1;
 contract TechWars{
 
 address public owner ;
-mapping (uint8 => string ) androidTechMon;
-mapping (uint8 => string) macTechMon;
-mapping (uint8 => string) windowsTechMon;
+mapping (uint8 => techMon ) androidTechMon;
+mapping (uint8 => techMon) macTechMon;
+mapping (uint8 => techMon) windowsTechMon;
 
 constructor(){
     owner = msg.sender;
-    androidTechMon[1] = "Android 1.0";
-    androidTechMon[2] = "Cupcake";
-    androidTechMon[3] = "Donut";
-    androidTechMon[4] = "Ice Cream Sandwich";
-    androidTechMon[5] = "Jelly Bean";
-    androidTechMon[6] = "KitKat";
-    androidTechMon[7] = "Lollipop";
-    androidTechMon[8] = "Marshmallow ";
-    androidTechMon[9] = "Oreo";
-    androidTechMon[10] = "Q";
+    move memory attack = move({ attack : 10,
+ speed : 10, 
+accuracy : 100
+});
 
+    androidTechMon[1] = techMon({name : "Android 1.0" , health : 90 , techMonType : "android"  , attackMove : attack , });
+    androidTechMon[2] = techMon({name : "Cupcake" , health : 100 , techMonType : "android"  , allMoves : tempMove});
+    androidTechMon[3] = techMon({name : "Donut" , health : 110 , techMonType : "android"  , allMoves : tempMove});
+    androidTechMon[4] =techMon({name : "Ice Cream Sandwich" , health : 120 , techMonType : "android"  , allMoves : tempMove}); 
+    androidTechMon[5] = techMon({name : "Jelly Bean" , health : 130 , techMonType : "android"  , allMoves : tempMove});
+    androidTechMon[6] =techMon({name : "KitKat" , health : 140 , techMonType : "android"  , allMoves : tempMove}); 
+    androidTechMon[7] = techMon({name : "Lollipop" , health : 150 , techMonType : "android"  , allMoves : tempMove});
+    androidTechMon[8] = techMon({name : "Marshmallow" , health : 160 , techMonType : "android"  , allMoves : tempMove});
+    androidTechMon[9] = techMon({name : "Oreo" , health : 170 , techMonType : "android"  , allMoves : tempMove});
+    androidTechMon[10] =techMon({name : "Q" , health : 180 , techMonType : "android"  , allMoves : tempMove}); 
 
-    macTechMon[1] = "Mac OS X10.0";
-    macTechMon[2] = "MacOS X10.6";
-    macTechMon[3] = "Yosemite";
-    macTechMon[4] = "Mavericks";
-    macTechMon[5] = "Sierra";
-    macTechMon[6] = "High Sierra";
-    macTechMon[7] = "Mojave";
-    macTechMon[8] = "Catalina ";
-    macTechMon[9] = "Big Sur";
-    macTechMon[10] = "Monterey";
+    move[] memory tempMove2;
+    macTechMon[1] = techMon({name : "Mac OS X10.0" , health : 30 , techMonType : "mac"  , allMoves : tempMove2});
+    macTechMon[2] = techMon({name : "Mac OS X10.6" , health : 40 , techMonType : "mac"  , allMoves : tempMove2});
+    macTechMon[3] = techMon({name : "Yosemite" , health : 50 , techMonType : "mac"  , allMoves : tempMove2});
+    macTechMon[4] = techMon({name : "Mavericks" , health : 60 , techMonType : "mac"  , allMoves : tempMove2});
+    macTechMon[5] = techMon({name : "Sierra" , health : 70 , techMonType : "mac"  , allMoves : tempMove2});
+    macTechMon[6] = techMon({name : "High Sierra" , health : 80 , techMonType : "mac"  , allMoves : tempMove2});
+    macTechMon[7] = techMon({name : "Mojave", health : 90 , techMonType : "mac"  , allMoves : tempMove2});
+    macTechMon[8] = techMon({name : "Catalina " , health : 100 , techMonType : "mac"  , allMoves : tempMove2});
+    macTechMon[9] = techMon({name : "Big Sur", health : 110 , techMonType : "mac"  , allMoves : tempMove2});
+    macTechMon[10] = techMon({name : "Monterey" , health : 120 , techMonType : "mac"  , allMoves : tempMove2});
 
-    
-    windowsTechMon[1] = "Windows 1.0";
-    windowsTechMon[2] = "Windows 2.0";
-    windowsTechMon[3] = "Windows 3.0";
-    windowsTechMon[4] = "Windows 95";
-    windowsTechMon[5] = "Windows 2000";
-    windowsTechMon[6] = "Windows XP";
-    windowsTechMon[7] = "Windows 7";
-    windowsTechMon[8] = "Windows 8";
-    windowsTechMon[9] = "Windows 10";
-    windowsTechMon[10] = "Windows 11";
+    move[] memory tempMove3;
+    windowsTechMon[1] =  techMon({name : "Windows 1.0" , health : 60 , techMonType : "windows"  , allMoves : tempMove3});
+    windowsTechMon[2] =  techMon({name : "Windows 2.0" , health : 70 , techMonType : "windows"  , allMoves : tempMove3});
+    windowsTechMon[3] =  techMon({name : "Windows 3.0" , health : 80 , techMonType : "windows"  , allMoves : tempMove3});
+    windowsTechMon[4] =  techMon({name : "Windows 95", health : 90 , techMonType : "windows"  , allMoves : tempMove3});
+    windowsTechMon[5] =  techMon({name : "Windows 2000" , health : 100 , techMonType : "windows"  , allMoves : tempMove3});
+    windowsTechMon[6] =  techMon({name : "Windows XP" , health : 110 , techMonType : "windows"  , allMoves : tempMove3});
+    windowsTechMon[7] =  techMon({name : "Windows 7" , health : 120 , techMonType : "windows"  , allMoves : tempMove3});
+    windowsTechMon[8] =  techMon({name : "Windows 8", health : 130 , techMonType : "windows"  , allMoves : tempMove3});
+    windowsTechMon[9] =  techMon({name : "Windows 10", health : 140 , techMonType : "windows"  , allMoves : tempMove3});
+    windowsTechMon[10] =  techMon({name : "Windows 11" , health : 150 , techMonType : "windows"  , allMoves : tempMove3});
 
 }
 
@@ -54,7 +59,7 @@ string name;
 uint8 level;
 address walletAddress;
 string playerType;
-string[] techMonOwned;
+techMon[] techMonOwned;
 uint8 xpPoints;
 uint8 maxPoints;
 uint8 maxLevel;
@@ -68,9 +73,11 @@ struct techMon{
 string name;
 uint16 health;
 string techMonType;
-uint16 maxHealth;
-uint8 speed;
-move[] allMoves;
+move attackMove;
+move healthMove;
+move speedMove;
+
+
 
 
 
@@ -78,8 +85,12 @@ move[] allMoves;
 
 struct move{
 
-string moveType;
+
 uint16 attack;
+uint8 speed;
+uint8 accuracy;
+
+
 
     
 }
@@ -101,7 +112,7 @@ function getName( address playerName ) public view returns (string memory ){
 function createNewPlayer(string memory playerName , address wallet  , string memory playerType) public {
 
     require(!playerExists(wallet) , "This player already exists!!");
-    string[] memory strings;
+    techMon[] memory strings;
 allPlayers[wallet] = player({
 
     name : playerName , 
@@ -116,17 +127,17 @@ allPlayers[wallet] = player({
 
 if(isWindows(wallet)){
 
-    allPlayers[wallet].techMonOwned.push("Windows 1");
+    allPlayers[wallet].techMonOwned.push(windowsTechMon[1]);
 }
 
 else if(isMac(wallet)){
-    allPlayers[wallet].techMonOwned.push("Macintosh 128K");
+    allPlayers[wallet].techMonOwned.push(macTechMon[1]);
 
 }
 
 else{
 
-    allPlayers[wallet].techMonOwned.push("Android 1.0");
+    allPlayers[wallet].techMonOwned.push(androidTechMon[1]);
 }
 
 
