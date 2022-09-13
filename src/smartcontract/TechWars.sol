@@ -137,6 +137,11 @@ uint8 accuracy;
     
 }
 
+function getPlayer(address wallet) public view  returns (player memory ){
+    return allPlayers[wallet];
+
+}
+
 function getLevel( address playerName ) public view returns (uint8){
 
     return allPlayers[playerName].level;
