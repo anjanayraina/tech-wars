@@ -1,7 +1,13 @@
 .navbar{
     flex-direction: row;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 2rem;
     font-size: 1.5rem;
+}
+
+.siIcon{
+
+    height:3rem;
+    width:2rem;
 }

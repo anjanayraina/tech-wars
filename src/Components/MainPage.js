@@ -1,14 +1,17 @@
 import React  ,{useState}from 'react'
 import {useLocation} from 'react-router-dom';
 import '../Styles/MainPage.css'
+import {
 
+  SiGamejolt
+} from "react-icons/si";
 
 const NavBar = () => (
   <div className='navbar'>
-      <div className='navbar__title navbar__item'>Tech Wars</div>
-      <div className='navbar__item'>About Us</div>
-      <div className='navbar__item'>Contact</div>
-      <div className='navbar__item'>Help</div>        
+      <SiGamejolt className = "siIcon"/>
+      <div className='navbar__item'>Start Game</div>
+      <div className='navbar__item'>Profile</div>
+            
   </div>
 );
 function MainPage() {
