@@ -1,6 +1,8 @@
 import React  ,{useState}from 'react'
 import {useLocation} from 'react-router-dom';
 import '../Styles/MainPage.css'
+
+
 const NavBar = () => (
   <div className='navbar'>
       <div className='navbar__title navbar__item'>Tech Wars</div>
@@ -18,7 +20,7 @@ function MainPage() {
   return (
    <div>
    <NavBar />
-
+This is play
    </div>
   )
 }
